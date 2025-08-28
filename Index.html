@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sanjita Raut - Portfolio</title>
+    <style>
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+      }
+
+      /* Navbar */
+      nav {
+        background: #222;
+        color: #fff;
+        padding: 15px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      nav a {
+        color: #fff;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+      nav a:hover {
+        color: #00c3ff;
+      }
+
+      /* Hero Section
+    header { 
+      background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                 url(Banner-image.jpeg) no-repeat center/cover; 
+      color:white; padding:100px 20px; text-align:center; 
+    }
+    header h1 { font-size:50px; margin-bottom:10px; }
+    header p { font-size:20px; } */
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("Snapchat-621524892.jpg") no-repeat center/cover;
+        color: #fff;
+        padding: 120px 20px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 90vh; /* full screen look */
+      }
+
+      .hero-content {
+        max-width: 800px;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      .hero .credits {
+        font-size: 0.95rem;
+        color: #ccc;
+        margin-top: 10px;
+        font-style: italic;
+      }
+
+      .hero-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 25px;
+        font-size: 1rem;
+        color: #fff;
+        background: #4caf50;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background 0.3s;
+      }
+
+      .hero-btn:hover {
+        background: #45a049;
+      }
+
+      /* Sections */
+      section {
+        padding: 60px 20px;
+        text-align: center;
+      }
+      section h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      section h2::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 3px;
+        background: #4caf50; /* Green accent line */
+        margin: 10px auto 0;
+        border-radius: 2px;
+      }
+
+      /* Articles (Questions) */
+      .articles {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+      .articles article {
+        background: #f9f9f9;
+        padding: 20px;
+        width: 300px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+        border-left: 5px solid #4CAF50; 
+      }
+      .articles article:hover {
+        transform: scale(1.05);
+      }
+      .articles img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
+
+      /* Lists */
+      ul {
+        text-align: left;
+        margin: 10px 0 20px 20px;
+      }
+
+      /* Slider */
+      .slider {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+      .slider img {
+        width: 280px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+      }
+      .slider img:hover {
+        transform: scale(1.05);
+      }
+
+      /* Testimonials */
+     /* Testimonials Section */
+.testimonials {
+  padding: 60px 20px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.testimonial {
+  max-width: 700px;
+  margin: auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.testimonial img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  
+  border: 2px solid #4CAF50;
+}
+
+.testimonial p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  text-align: left;
+}
+
+.testimonial b {
+  display: block;
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #222;
+}
+
+.testimonial span {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+
+      /* Footer */
+
+      /* Footer Section */
+      .footer {
+        background: #222;
+        color: #ddd;
+        padding: 50px 20px 20px;
+        font-size: 0.95rem;
+      }
+
+      .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1100px;
+        margin: auto;
+      }
+
+      .footer-container div {
+        flex: 1;
+        min-width: 250px;
+        margin: 10px 20px;
+      }
+
+      .footer h3 {
+        color: #fff;
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+        border-left: 4px solid #4caf50;
+        padding-left: 8px;
+      }
+
+      .footer p,
+      .footer a {
+        color: #ddd;
+        text-decoration: none;
+        line-height: 1.6;
+      }
+
+      .footer a:hover {
+        color: #4caf50; /* hover effect */
+      }
+
+      .footer-links ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-links ul li {
+        margin: 8px 0;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        border-top: 1px solid #444;
+        margin-top: 30px;
+        padding-top: 15px;
+        font-size: 0.85rem;
+        color: #aaa;
+      }
+
+      /* footer { background:#222; color:#fff; text-align:center; padding:20px; margin-top:20px; } */
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 32px;
+        }
+        .articles {
+          flex-direction: column;
+          align-items: center;
+        }
+        .slider img {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#articles">Questions</a>
+      <a href="#gallery">Image Gallery</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <!-- <header>
+    <h1>Welcome to My Portfolio</h1>
+    <p>Hello, I’m Sanjita Raut — a passionate learner from Medange, Jiri. Exploring technology, design, and creativity to build my future in the digital world.</p>
+    <p>Created by <b>Sanjita Raut</b></p>
+    <p>Guided by <b>Sir Aaryan Maharjan</b></p>
+  </header> -->
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Welcome to My Portfolio</h1>
+        <p>
+          Hello, I’m <b>Sanjita Raut</b> — a passionate learner from Medange,
+          Jiri. Exploring technology, design, and creativity to build my future
+          in the digital world.
+        </p>
+        <p class="credits">
+          Created by <b>Sanjita Raut</b> | Guided by <b>Sir Aryan Maharjan</b>
+        </p>
+        <a href="#portfolio" class="hero-btn">View My Work</a>
+      </div>
+    </header>
+
+    <!-- About Us -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I’m <b>Sanjita Raut</b>, a passionate learner from Medange, Jiri, Nepal
+        with a strong interest in technology, creativity, and problem-solving. I
+        enjoy exploring the digital world, from understanding the basics of
+        computers and networking to designing and building simple websites. My
+        goal is to continuously learn, improve my skills, and grow into a
+        professional who can make a meaningful impact through technology. I
+        believe in dedication, curiosity, and consistency as the keys to
+        success. This portfolio reflects my journey, the skills I am developing,
+        and the projects that showcase my interest in technology and design.
+      </p>
+    </section>
+
+    <!-- Questions / Articles -->
+    <section id="articles">
+      <h2> Questions & Answers</h2>
+      <div class="articles">
+        <!-- BSOD -->
+        <article>
+          <img
+            src="bsod.jpeg"
+            alt="BSOD"
+          />
+          <h3>1. What is BSOD?</h3>
+          <p>
+            <b>Definition:</b> BSOD (Blue Screen of Death) is an error screen
+            displayed on Windows when the system crashes.
+          </p>
+          <p><b>Causes:</b></p>
+          <ul>
+            <li>Hardware failure</li>
+            <li>Corrupt drivers</li>
+            <li>Overheating</li>
+            <li>Malware or virus</li>
+          </ul>
+          <p><b>Solutions (Step by Step):</b></p>
+          <ul>
+            <li>Restart the PC</li>
+            <li>Update or reinstall drivers</li>
+            <li>Scan for malware</li>
+            <li>Check RAM & Hard drive</li>
+            <li>Reinstall Windows if needed</li>
+          </ul>
+        </article>
+
+        <!-- LAN -->
+        <article>
+          <img
+            src="lan.jpeg"
+            alt="LAN"
+          />
+          <h3>2. What is LAN?</h3>
+          <p>
+            <b>Definition:</b> LAN (Local Area Network) is a network connecting
+            computers within a small area like home, school, or office.
+          </p>
+          <p><b>Advantages:</b></p>
+          <ul>
+            <li>File & resource sharing</li>
+            <li>Low cost setup</li>
+            <li>Secure communication</li>
+            <li>Fast data transfer</li>
+          </ul>
+          <p><b>Steps to Setup:</b></p>
+          <ul>
+            <li>Gather hardware (switch, router, cables)</li>
+            <li>Connect all devices</li>
+            <li>Configure IP addresses</li>
+            <li>Install LAN drivers</li>
+            <li>Test connection</li>
+          </ul>
+        </article>
+
+        <!-- Open Source -->
+        <article>
+          <img
+            src="open-source.jpeg"
+            alt="Open Source"
+          />
+          <h3>3. What is Open Source Software?</h3>
+          <p>
+            <b>Definition:</b> Open Source software is free software whose
+            source code is available for everyone to use, modify, and share.
+          </p>
+          <p><b>Advantages:</b></p>
+          <ul>
+            <li>Free to use</li>
+            <li>Customizable</li>
+            <li>Secure and transparent</li>
+            <li>Community support</li>
+          </ul>
+          <p><b>Examples:</b></p>
+          <ul>
+            <li>Linux</li>
+            <li>VLC Media Player</li>
+            <li>Mozilla Firefox</li>
+            <li>LibreOffice</li>
+            <li>GIMP</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Image Slider -->
+    <section id="gallery">
+      <h2>Image Gallery</h2>
+      <div class="slider">
+        <img src="https://picsum.photos/300/200?random=10" alt="img1" />
+        <img src="https://picsum.photos/300/200?random=11" alt="img2" />
+        <img src="https://picsum.photos/300/200?random=12" alt="img3" />
+        <img src="https://picsum.photos/300/200?random=12" alt="img3" />
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+  <section id="testimonials" class="testimonials">
+  <h2>Testimonials</h2>
+  <div class="testimonial">
+    <img src="computer-instructor.jpeg" alt="Computer Instructor">
+    <p>
+      "Sanjita is a hardworking student learning tech skills. Her portfolio
+      website looks very creative and shows good progress in web development." 
+      <br />
+      <b>Aryan Maharjan</b> <span>— Computer Instructor</span>
+    </p>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h3>About Me</h3>
+          <p>
+            I am Sanjita Raut, an aspiring web developer passionate about
+            learning new technologies and building creative projects.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#articles">Articles</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <p>
+            Email: <a href="mailto:sanjitaraut850@gmail.come">sanjitaraut850@gmail.com</a>
+          </p>
+          <p>Phone: +977-9749339729</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Sanjita Raut | All Rights Reserved</p>
+      </div>
+    </footer>
+  </body>
+</html>
